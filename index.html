@@ -36,7 +36,7 @@
         .sidebar-item:hover:not(.sidebar-active) { background-color: #FEE2E2; color: #DC2626; }
     </style>
 </head>
-<body class="bg-slate-100 h-screen overflow-hidden flex justify-center items-center">
+<body class="bg-slate-100 h-screen h-[100dvh] overflow-hidden flex justify-center items-center">
 
     <div class="w-full h-full md:max-w-6xl md:h-[95vh] bg-white md:bg-white md:rounded-3xl md:shadow-2xl relative overflow-hidden flex flex-col md:border md:border-slate-200">
 
@@ -283,11 +283,11 @@
                 </div>
             </div>
 
-            <!-- Content Area -->
-            <div id="content-area" class="flex-1 overflow-hidden relative bg-slate-50">
+            <!-- Content Area (Clean flex-1 with min-h-0 so bottom nav is never overlapped) -->
+            <div id="content-area" class="flex-1 min-h-0 overflow-hidden relative bg-slate-50">
                 
                 <!-- HOME PAGE -->
-                <div id="page-home" class="h-full overflow-y-auto fade-in pb-24 md:pb-8 bg-slate-50 relative">
+                <div id="page-home" class="h-full overflow-y-auto fade-in pb-8 bg-slate-50 relative">
                     <div class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-rose-50 to-transparent pointer-events-none"></div>
                     
                     <div class="px-5 md:px-10 pt-5 relative z-10 max-w-5xl mx-auto">
@@ -367,18 +367,18 @@
                 </div>
 
                 <!-- NOTIFICATIONS PAGE -->
-                <div id="page-notifications" class="hidden h-full flex flex-col fade-in pb-20 md:pb-6 max-w-4xl mx-auto">
+                <div id="page-notifications" class="hidden h-full flex flex-col fade-in max-w-4xl mx-auto">
                     <div class="bg-white p-4 shadow-sm mb-2 border-b">
                         <h2 class="font-bold text-lg md:text-xl text-gray-800" data-i18n="notifTitle">Notifications</h2>
                         <p class="text-xs text-gray-500" data-i18n="notifSub">Requests matching your blood group</p>
                     </div>
-                    <div id="notification-list" class="p-4 space-y-3 overflow-y-auto flex-1">
+                    <div id="notification-list" class="p-4 space-y-3 overflow-y-auto flex-1 pb-8">
                         <p class="text-center text-gray-400 mt-10 text-sm" data-i18n="noNotif">No new notifications.</p>
                     </div>
                 </div>
 
-                <!-- SEARCH PAGE (REFINED & SLIM SEARCH BAR) -->
-                <div id="page-search" class="hidden h-full flex flex-col fade-in pb-20 md:pb-6 bg-gray-50">
+                <!-- SEARCH PAGE -->
+                <div id="page-search" class="hidden h-full flex flex-col fade-in bg-gray-50">
                     <div class="bg-rose-600 px-4 py-3 md:py-4 rounded-b-2xl md:rounded-b-3xl shadow-md shrink-0 relative z-10 max-w-5xl mx-auto w-full">
                         <h2 class="text-white text-center text-sm md:text-base font-bold mb-2 tracking-wide" data-i18n="findDonorsTitle">Find Blood Donors</h2>
                         
@@ -424,7 +424,7 @@
                         </div>
                     </div>
 
-                    <div id="donors-list" class="flex-1 overflow-y-auto px-4 md:px-8 pt-1 pb-20 md:pb-6 space-y-2.5 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 max-w-5xl mx-auto w-full">
+                    <div id="donors-list" class="flex-1 overflow-y-auto px-4 md:px-8 pt-1 pb-8 space-y-2.5 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 max-w-5xl mx-auto w-full">
                         <div class="text-center mt-10 opacity-50 col-span-full"><i class="fa-solid fa-users-viewfinder text-5xl text-gray-300 mb-3"></i><p class="text-gray-400 text-sm" data-i18n="searchingDonors">Searching for donors...</p></div>
                     </div>
                 </div>
@@ -438,7 +438,7 @@
                         <button onclick="switchReqTab('all')" id="tab-req-all" class="flex-1 py-2 rounded-lg text-xs md:text-sm font-bold text-gray-500 transition" data-i18n="myReqTab">My Requests</button>
                     </div>
 
-                    <div id="view-req-new" class="flex-1 overflow-y-auto pb-20 md:pb-6">
+                    <div id="view-req-new" class="flex-1 overflow-y-auto pb-8">
                         <div class="bg-white p-5 rounded-2xl shadow-sm space-y-3.5 border border-slate-100">
                             <div id="edit-mode-banner" class="hidden bg-yellow-50 text-yellow-700 p-2 rounded text-xs font-bold flex justify-between items-center">
                                 <span><i class="fa-solid fa-pen-to-square mr-1"></i> Editing Post</span>
@@ -493,7 +493,7 @@
                         </div>
                     </div>
 
-                    <div id="view-req-all" class="hidden flex-1 overflow-y-auto pb-20 md:pb-6">
+                    <div id="view-req-all" class="hidden flex-1 overflow-y-auto pb-8">
                         <div id="all-requests-list-view" class="space-y-3 md:space-y-0 md:grid md:grid-cols-2 md:gap-4">
                             <p class="text-center text-gray-400 mt-10 text-xs col-span-full">Loading your requests...</p>
                         </div>
@@ -501,7 +501,7 @@
                 </div>
 
                 <!-- FEED PAGE -->
-                <div id="page-feed" class="hidden h-full overflow-y-auto p-4 md:p-6 fade-in pb-20 md:pb-6 bg-slate-50 max-w-5xl mx-auto w-full">
+                <div id="page-feed" class="hidden h-full overflow-y-auto p-4 md:p-6 fade-in pb-8 bg-slate-50 max-w-5xl mx-auto w-full">
                     <div class="flex items-center gap-2 mb-4">
                         <h2 class="font-bold text-lg md:text-xl text-slate-800" data-i18n="feedTitle">Live Blood Feed</h2>
                         <span class="w-2.5 h-2.5 bg-red-600 rounded-full animate-ping"></span>
@@ -512,7 +512,7 @@
                 </div>
 
                 <!-- PROFILE PAGE -->
-                <div id="page-profile" class="hidden h-full overflow-y-auto fade-in bg-slate-50 pb-20 md:pb-6 max-w-2xl mx-auto w-full">
+                <div id="page-profile" class="hidden h-full overflow-y-auto fade-in bg-slate-50 pb-8 max-w-2xl mx-auto w-full">
                     <div class="bg-rose-600 rounded-b-[32px] pt-4 pb-14 px-6 relative shadow-md">
                         <div class="flex justify-between items-center mb-3">
                             <div class="flex items-center gap-2 text-white"><i class="fa-solid fa-droplet"></i><span class="font-bold text-base">NJBDS</span></div>
@@ -582,11 +582,11 @@
 
             </div> 
 
-            <!-- Bottom Nav -->
-            <div class="bg-white border-t flex justify-around py-2.5 px-2 pb-5 z-30 fixed bottom-0 w-full md:hidden shrink-0">
+            <!-- Bottom Nav (Natural Flex Child on Mobile: Cleanly positioned above bottom edge) -->
+            <div class="bg-white border-t flex justify-around items-center py-2 px-2 z-30 w-full md:hidden shrink-0">
                 <button onclick="navTo('page-home')" class="nav-btn text-rose-600 flex flex-col items-center"><i class="fa-solid fa-house text-base mb-1"></i><span class="text-[10px]" data-i18n="navHome">Home</span></button>
                 <button onclick="navTo('page-search')" class="nav-btn text-gray-400 flex flex-col items-center"><i class="fa-solid fa-magnifying-glass text-base mb-1"></i><span class="text-[10px]" data-i18n="navSearch">Search</span></button>
-                <button onclick="navTo('page-request')" class="relative -top-5 bg-rose-600 text-white w-11 h-11 rounded-full shadow-lg flex items-center justify-center border-4 border-gray-100 active:scale-95 transition"><i class="fa-solid fa-plus text-lg"></i></button>
+                <button onclick="navTo('page-request')" class="relative -top-4 bg-rose-600 text-white w-11 h-11 rounded-full shadow-lg flex items-center justify-center border-4 border-gray-100 active:scale-95 transition"><i class="fa-solid fa-plus text-lg"></i></button>
                 <button onclick="navTo('page-feed')" class="nav-btn text-gray-400 flex flex-col items-center"><i class="fa-solid fa-rss text-base mb-1"></i><span class="text-[10px]" data-i18n="navFeed">Feed</span></button>
                 <button onclick="navTo('page-profile')" class="nav-btn text-gray-400 flex flex-col items-center"><i class="fa-solid fa-user text-base mb-1"></i><span class="text-[10px]" data-i18n="navProfile">Profile</span></button>
             </div>
@@ -713,7 +713,7 @@
         let isEditing = false;
         let editingId = null;
 
-        // --- ACCURATE TRANSLATION DICTIONARY ---
+        // --- TRANSLATION DICTIONARY ---
         const translations = {
             en: {
                 splashSub: "Give Blood-Save Life",
@@ -1339,7 +1339,7 @@
             signOut(auth).then(() => { location.reload(); });
         };
 
-        // --- SHOW MAIN APP (FULL NAME DISPLAY) ---
+        // --- SHOW MAIN APP ---
         function showMainApp() {
             document.getElementById('auth-page').classList.add('hidden');
             document.getElementById('auth-page').classList.remove('flex');
@@ -1348,7 +1348,6 @@
             document.getElementById('main-app').classList.remove('hidden');
             document.getElementById('main-app').classList.add('flex');
             
-            // Displays complete full name
             if(currentUserData && currentUserData.name) {
                 document.getElementById('user-name-display').innerText = currentUserData.name;
             }
@@ -1913,7 +1912,7 @@
             localStorage.setItem('lastSeenNotif', Date.now());
         };
 
-        // --- SEARCH DONORS (SLIM UI & RENDER) ---
+        // --- SEARCH DONORS ---
         function renderSearchResults() {
             const list = document.getElementById('donors-list');
             const statsDiv = document.getElementById('search-stats');
@@ -2145,7 +2144,7 @@
                     section.innerHTML = html;
                 } catch (e) {
                     console.error(e);
-                    section.innerHTML = '<p class="text-center text-xs text-red-400 py-2">Error loading history.</p>';
+                    section.innerHTML = '<p class="text-center text-red-400 py-2">Error loading history.</p>';
                 }
             } else {
                 section.classList.add('hidden');
