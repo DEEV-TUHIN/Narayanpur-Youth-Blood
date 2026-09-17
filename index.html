@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #f1f5f9; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Poppins', 'Hind Siliguri', sans-serif; background-color: #f1f5f9; -webkit-tap-highlight-color: transparent; }
         ::-webkit-scrollbar { width: 0px; background: transparent; }
         .fade-in { animation: fadeIn 0.3s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -44,7 +44,7 @@
         <div id="splash" class="splash-screen">
             <div class="text-white text-5xl md:text-6xl mb-4 animate-bounce"><i class="fa-solid fa-droplet"></i></div>
             <h1 class="text-white text-3xl font-bold tracking-wider">NJBDS</h1>
-            <p class="text-white opacity-80 text-sm mt-2">Give Blood-Save Life</p>
+            <p class="text-white opacity-80 text-sm mt-2" data-i18n="splashSub">Give Blood-Save Life</p>
         </div>
 
         <!-- 2. AUTHENTICATION PAGE -->
@@ -52,36 +52,36 @@
             <div class="bg-white w-full max-w-md p-6 md:p-8 rounded-3xl shadow-2xl">
                 <div class="text-center mb-6">
                     <i class="fa-solid fa-heart-pulse text-rose-600 text-5xl mb-3"></i>
-                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800">Welcome</h2>
-                    <p class="text-slate-500 text-xs md:text-sm">Sign in to continue</p>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800" data-i18n="authWelcome">Welcome</h2>
+                    <p class="text-slate-500 text-xs md:text-sm" data-i18n="authSub">Sign in to continue</p>
                 </div>
 
                 <div class="flex bg-slate-100 p-1 rounded-xl mb-5">
-                    <button onclick="showAuthForm('login')" id="tab-login" class="flex-1 py-2.5 rounded-lg text-xs md:text-sm font-bold bg-white shadow text-rose-600 transition">Login</button>
-                    <button onclick="showAuthForm('register')" id="tab-register" class="flex-1 py-2.5 rounded-lg text-xs md:text-sm font-bold text-slate-500 transition">Register</button>
+                    <button onclick="showAuthForm('login')" id="tab-login" class="flex-1 py-2.5 rounded-lg text-xs md:text-sm font-bold bg-white shadow text-rose-600 transition" data-i18n="login">Login</button>
+                    <button onclick="showAuthForm('register')" id="tab-register" class="flex-1 py-2.5 rounded-lg text-xs md:text-sm font-bold text-slate-500 transition" data-i18n="register">Register</button>
                 </div>
 
                 <!-- Login Form -->
                 <form id="login-form" class="space-y-4">
-                    <input type="email" id="login-email" placeholder="Email Address" class="w-full p-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm transition">
-                    <input type="password" id="login-pass" placeholder="Password" class="w-full p-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm transition">
+                    <input type="email" id="login-email" placeholder="Email Address" data-i18n-ph="emailPh" class="w-full p-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm transition">
+                    <input type="password" id="login-pass" placeholder="Password" data-i18n-ph="passPh" class="w-full p-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm transition">
                     
                     <div class="flex justify-end">
-                        <button type="button" onclick="handleForgotPassword()" class="text-xs text-rose-600 hover:underline font-semibold">Forgot Password?</button>
+                        <button type="button" onclick="handleForgotPassword()" class="text-xs text-rose-600 hover:underline font-semibold" data-i18n="forgotPass">Forgot Password?</button>
                     </div>
 
                     <button type="button" onclick="handleLogin()" id="btn-login" class="w-full bg-rose-600 text-white py-3.5 rounded-xl font-bold shadow-lg shadow-rose-200 hover:bg-rose-700 flex justify-center items-center transition active:scale-95 text-sm">
-                        <span>Login</span>
+                        <span data-i18n="login">Login</span>
                         <div class="loader ml-2" id="login-loader"></div>
                     </button>
                 </form>
 
                 <!-- Register Form -->
                 <form id="register-form" class="space-y-3 hidden max-h-[62vh] overflow-y-auto pr-1">
-                    <input type="text" id="reg-name" placeholder="Full Name" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm">
-                    <input type="email" id="reg-email" placeholder="Email Address" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm">
-                    <input type="tel" id="reg-phone" placeholder="Phone Number (11 Digits)" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm">
-                    <input type="password" id="reg-pass" placeholder="Create Password" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm">
+                    <input type="text" id="reg-name" placeholder="Full Name" data-i18n-ph="namePh" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm">
+                    <input type="email" id="reg-email" placeholder="Email Address" data-i18n-ph="emailPh" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm">
+                    <input type="tel" id="reg-phone" placeholder="Phone Number (11 Digits)" data-i18n-ph="phonePh" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm">
+                    <input type="password" id="reg-pass" placeholder="Create Password" data-i18n-ph="createPassPh" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm">
                     
                     <div class="flex gap-2">
                         <select id="reg-blood" class="w-1/2 p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600 focus:outline-none focus:ring-2 focus:ring-rose-500">
@@ -96,20 +96,20 @@
                             <option value="AB-">AB-</option>
                         </select>
                         <select id="reg-role" class="w-1/2 p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600 focus:outline-none focus:ring-2 focus:ring-rose-500">
-                            <option value="donor">Donor</option>
-                            <option value="receiver">Receiver</option>
+                            <option value="donor" data-i18n="roleDonor">Donor</option>
+                            <option value="receiver" data-i18n="roleReceiver">Receiver</option>
                         </select>
                     </div>
 
                     <div class="flex flex-col md:flex-row gap-2">
                         <select id="reg-district" class="district-select w-full md:w-1/2 p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600 focus:outline-none focus:ring-2 focus:ring-rose-500">
-                            <option value="" disabled selected>Select District</option>
+                            <option value="" disabled selected data-i18n="selectDistrict">Select District</option>
                         </select>
-                        <input type="text" id="reg-upazila" placeholder="Upazila / Area" class="w-full md:w-1/2 p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
+                        <input type="text" id="reg-upazila" placeholder="Upazila / Area" data-i18n-ph="upazilaPh" class="w-full md:w-1/2 p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
                     </div>
                     
                     <button type="button" onclick="handleRegister()" id="btn-reg" class="w-full bg-rose-600 text-white py-3 rounded-xl font-bold shadow-lg hover:bg-rose-700 flex justify-center items-center transition active:scale-95 text-sm mt-2">
-                        <span>Register</span>
+                        <span data-i18n="register">Register</span>
                         <div class="loader ml-2" id="reg-loader"></div>
                     </button>
                 </form>
@@ -118,7 +118,6 @@
 
         <!-- 3. ADMIN PANEL LAYOUT -->
         <div id="admin-panel" class="hidden w-full h-full bg-gray-100 flex-row overflow-hidden fixed inset-0 z-50">
-            
             <!-- SIDEBAR -->
             <aside id="adm-sidebar" class="w-64 bg-white shadow-md flex-col hidden md:flex h-full transform transition-transform duration-300 border-r border-gray-200">
                 <div class="p-6 border-b flex items-center justify-between h-20">
@@ -151,8 +150,6 @@
 
             <!-- MAIN ADMIN CONTENT -->
             <div class="flex-1 flex flex-col h-full overflow-hidden relative">
-                
-                <!-- MOBILE HEADER -->
                 <div class="md:hidden bg-white shadow-sm p-4 flex justify-between items-center z-40 h-16 shrink-0">
                     <div class="flex items-center gap-2">
                         <i class="fa-solid fa-droplet text-red-600 text-lg"></i>
@@ -161,13 +158,10 @@
                     <button onclick="toggleMobileMenu()" class="p-2 rounded hover:bg-gray-100"><i class="fa-solid fa-bars text-xl text-gray-600"></i></button>
                 </div>
 
-                <!-- CONTENT AREA -->
                 <main class="flex-1 overflow-y-auto p-4 md:p-8 bg-gray-50">
-                    
                     <!-- DASHBOARD VIEW -->
                     <div id="view-dash" class="fade-in max-w-6xl mx-auto">
                         <h2 class="text-2xl font-bold text-gray-800 mb-6">Dashboard Overview</h2>
-                        
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                             <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-red-500">
                                 <div class="flex justify-between items-center">
@@ -175,9 +169,7 @@
                                         <p class="text-gray-500 text-sm font-medium">Total Users</p>
                                         <h3 class="text-3xl font-bold text-gray-800" id="stat-users">0</h3>
                                     </div>
-                                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xl">
-                                        <i class="fa-solid fa-users"></i>
-                                    </div>
+                                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xl"><i class="fa-solid fa-users"></i></div>
                                 </div>
                             </div>
                             <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-500">
@@ -186,9 +178,7 @@
                                         <p class="text-gray-500 text-sm font-medium">Active Requests</p>
                                         <h3 class="text-3xl font-bold text-gray-800" id="stat-reqs">0</h3>
                                     </div>
-                                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xl">
-                                        <i class="fa-solid fa-clipboard-list"></i>
-                                    </div>
+                                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xl"><i class="fa-solid fa-clipboard-list"></i></div>
                                 </div>
                             </div>
                             <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-green-500">
@@ -197,13 +187,10 @@
                                         <p class="text-gray-500 text-sm font-medium">Active Donors</p>
                                         <h3 class="text-3xl font-bold text-gray-800" id="stat-donors">0</h3>
                                     </div>
-                                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl">
-                                        <i class="fa-solid fa-hand-holding-medical"></i>
-                                    </div>
+                                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl"><i class="fa-solid fa-hand-holding-medical"></i></div>
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
                             <h3 class="font-bold text-lg mb-4 text-gray-700">System Health</h3>
                             <div class="flex items-center gap-2 text-green-600 bg-green-50 p-3 rounded-lg border border-green-100 w-fit">
@@ -228,8 +215,7 @@
                                             <th class="p-4 border-b text-right">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="users-table-body" class="text-sm text-gray-700 divide-y divide-gray-100">
-                                    </tbody>
+                                    <tbody id="users-table-body" class="text-sm text-gray-700 divide-y divide-gray-100"></tbody>
                                 </table>
                             </div>
                             <div id="users-loader" class="p-10 text-center hidden"><div class="loader inline-block"></div></div>
@@ -239,8 +225,7 @@
                     <!-- REQUESTS VIEW -->
                     <div id="view-reqs" class="hidden fade-in max-w-6xl mx-auto">
                         <h2 class="text-2xl font-bold text-gray-800 mb-6">Manage Requests</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" id="reqs-grid">
-                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" id="reqs-grid"></div>
                         <div id="reqs-loader" class="p-10 text-center hidden"><div class="loader inline-block"></div></div>
                     </div>
 
@@ -258,11 +243,9 @@
                                 <i class="fa-solid fa-plus mr-2"></i> Add Member
                             </button>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="admin-team-grid">
-                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="admin-team-grid"></div>
                         <div id="team-loader" class="p-10 text-center hidden"><div class="loader inline-block"></div></div>
                     </div>
-
                 </main>
             </div>
         </div>
@@ -270,8 +253,8 @@
         <!-- 4. MAIN USER APP LAYOUT -->
         <div id="main-app" class="hidden flex-col h-full w-full relative overflow-hidden">
             
-            <!-- Header (Adaptive for Mobile & Desktop) -->
-            <div id="global-header" class="bg-white px-5 py-3.5 shadow-sm flex justify-between items-center z-10 shrink-0 border-b border-slate-100">
+            <!-- Global Header with Language Switcher -->
+            <div id="global-header" class="bg-white px-4 md:px-6 py-3 shadow-sm flex justify-between items-center z-10 shrink-0 border-b border-slate-100">
                 <div class="flex items-center gap-2">
                     <i class="fa-solid fa-droplet text-rose-600 text-xl"></i>
                     <h1 class="font-bold text-lg text-slate-800">NJBDS</h1>
@@ -279,17 +262,23 @@
 
                 <!-- Desktop Navigation Menu -->
                 <nav class="hidden md:flex items-center gap-6">
-                    <button onclick="navTo('page-home')" class="text-sm font-semibold text-slate-600 hover:text-rose-600 transition flex items-center gap-1.5"><i class="fa-solid fa-house"></i> Home</button>
-                    <button onclick="navTo('page-search')" class="text-sm font-semibold text-slate-600 hover:text-rose-600 transition flex items-center gap-1.5"><i class="fa-solid fa-magnifying-glass"></i> Find Donor</button>
-                    <button onclick="navTo('page-request')" class="text-sm font-semibold text-slate-600 hover:text-rose-600 transition flex items-center gap-1.5"><i class="fa-solid fa-plus-circle"></i> Request</button>
-                    <button onclick="navTo('page-feed')" class="text-sm font-semibold text-slate-600 hover:text-rose-600 transition flex items-center gap-1.5"><i class="fa-solid fa-rss"></i> Live Feed</button>
-                    <button onclick="navTo('page-profile')" class="text-sm font-semibold text-slate-600 hover:text-rose-600 transition flex items-center gap-1.5"><i class="fa-solid fa-user"></i> Profile</button>
+                    <button onclick="navTo('page-home')" class="text-sm font-semibold text-slate-600 hover:text-rose-600 transition flex items-center gap-1.5"><i class="fa-solid fa-house"></i> <span data-i18n="navHome">Home</span></button>
+                    <button onclick="navTo('page-search')" class="text-sm font-semibold text-slate-600 hover:text-rose-600 transition flex items-center gap-1.5"><i class="fa-solid fa-magnifying-glass"></i> <span data-i18n="navSearch">Find Donor</span></button>
+                    <button onclick="navTo('page-request')" class="text-sm font-semibold text-slate-600 hover:text-rose-600 transition flex items-center gap-1.5"><i class="fa-solid fa-plus-circle"></i> <span data-i18n="navRequest">Request</span></button>
+                    <button onclick="navTo('page-feed')" class="text-sm font-semibold text-slate-600 hover:text-rose-600 transition flex items-center gap-1.5"><i class="fa-solid fa-rss"></i> <span data-i18n="navFeed">Live Feed</span></button>
+                    <button onclick="navTo('page-profile')" class="text-sm font-semibold text-slate-600 hover:text-rose-600 transition flex items-center gap-1.5"><i class="fa-solid fa-user"></i> <span data-i18n="navProfile">Profile</span></button>
                 </nav>
 
-                <div class="flex items-center gap-4">
-                    <div class="relative cursor-pointer" onclick="navTo('page-notifications')">
-                        <i class="fa-solid fa-bell text-slate-600 text-xl hover:text-rose-600 transition"></i>
-                        <div id="notif-badge" class="hidden absolute -top-1 -right-1 w-3 h-3 bg-rose-600 rounded-full border-2 border-white"></div>
+                <!-- Language Toggle & Notification -->
+                <div class="flex items-center gap-2.5">
+                    <button onclick="toggleLanguage()" id="lang-btn" class="bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 px-2.5 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 transition active:scale-95 shadow-sm">
+                        <i class="fa-solid fa-globe text-[11px]"></i>
+                        <span id="lang-label">বাংলা</span>
+                    </button>
+                    
+                    <div class="relative cursor-pointer p-1" onclick="navTo('page-notifications')">
+                        <i class="fa-solid fa-bell text-slate-600 text-lg md:text-xl hover:text-rose-600 transition"></i>
+                        <div id="notif-badge" class="hidden absolute top-0 right-0 w-2.5 h-2.5 bg-rose-600 rounded-full border-2 border-white"></div>
                     </div>
                 </div>
             </div>
@@ -302,76 +291,75 @@
                     <div class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-rose-50 to-transparent pointer-events-none"></div>
                     
                     <div class="px-5 md:px-10 pt-5 relative z-10 max-w-5xl mx-auto">
-                        <!-- Hero Banner -->
+                        <!-- Hero Banner with Full Name Display -->
                         <div class="bg-gradient-to-br from-rose-600 to-red-700 rounded-3xl p-5 md:p-8 text-white shadow-xl shadow-red-200/50 relative overflow-hidden mb-6 group">
                             <div class="absolute -top-10 -right-10 w-40 h-40 bg-white opacity-10 rounded-full blur-2xl group-hover:scale-110 transition duration-700"></div>
                             <div class="absolute bottom-0 left-0 w-32 h-32 bg-black opacity-5 rounded-full blur-2xl"></div>
                             <div class="relative z-10">
                                 <div class="flex justify-between items-start">
                                     <div>
-                                        <p class="text-red-100 text-xs md:text-sm font-medium mb-1">Welcome to NJBDS</p>
-                                        <h2 class="text-2xl md:text-3xl font-black tracking-tight"><span id="user-name-display">User</span>!</h2>
+                                        <p class="text-red-100 text-xs md:text-sm font-medium mb-1" data-i18n="welcomeSub">Welcome to NJBDS</p>
+                                        <h2 class="text-xl md:text-3xl font-black tracking-tight"><span id="user-name-display">User</span>!</h2>
                                     </div>
-                                    <!-- Optimized Icon Size on Mobile -->
                                     <div class="bg-white/20 backdrop-blur-md w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full shadow-inner text-sm md:text-base">
                                         <i class="fa-solid fa-droplet text-white animate-bounce"></i>
                                     </div>
                                 </div>
-                                <p class="text-xs md:text-sm text-red-50 mt-2 leading-relaxed font-light opacity-90 max-w-md">
+                                <p class="text-xs md:text-sm text-red-50 mt-2 leading-relaxed font-light opacity-90 max-w-md" data-i18n="heroText">
                                     Your donation is a gift of life. Ready to save a soul today?
                                 </p>
                                 <div class="mt-5 flex gap-3 max-w-md">
                                     <button onclick="navTo('page-request')" class="flex-1 bg-white text-red-600 px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold shadow-lg hover:bg-gray-50 transition transform active:scale-95 flex items-center justify-center gap-2">
-                                        <i class="fa-solid fa-plus"></i> Request
+                                        <i class="fa-solid fa-plus"></i> <span data-i18n="btnRequest">Request</span>
                                     </button>
                                     <button onclick="navTo('page-search')" class="flex-1 bg-red-800/30 text-white px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold border border-white/20 hover:bg-red-800/50 transition transform active:scale-95 flex items-center justify-center gap-2">
-                                        <i class="fa-solid fa-magnifying-glass"></i> Find Donor
+                                        <i class="fa-solid fa-magnifying-glass"></i> <span data-i18n="btnFindDonor">Find Donor</span>
                                     </button>
                                 </div>
                             </div>
                         </div>
 
                         <div class="flex items-center justify-between mb-4 px-1">
-                            <h3 class="font-bold text-slate-800 text-base md:text-lg tracking-wide border-l-4 border-rose-500 pl-3">Dashboard</h3>
+                            <h3 class="font-bold text-slate-800 text-base md:text-lg tracking-wide border-l-4 border-rose-500 pl-3" data-i18n="dashboardTitle">Dashboard</h3>
                             <span class="text-[10px] font-semibold bg-slate-200 text-slate-500 px-2 py-0.5 rounded-full">V 1.2</span>
                         </div>
 
-                        <!-- Action Cards (Grid: 2 cols on Mobile, 4 on Desktop | Compact Icons) -->
+                        <!-- Action Cards -->
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-3.5 md:gap-5 mb-6">
                             <div onclick="navTo('page-feed')" class="bg-white p-3.5 md:p-5 rounded-2xl md:rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] active:scale-95 transition cursor-pointer border border-slate-100 group hover:border-indigo-100 relative overflow-hidden">
                                 <div class="absolute top-0 right-0 w-12 h-12 md:w-16 md:h-16 bg-indigo-50 rounded-bl-full -mr-3 -mt-3 transition group-hover:bg-indigo-100"></div>
                                 <div class="w-9 h-9 md:w-11 md:h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-base md:text-xl mb-2.5 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 shadow-sm relative z-10"><i class="fa-solid fa-rss"></i></div>
-                                <span class="font-bold text-slate-700 text-xs md:text-sm block">Blood Feed</span>
-                                <span class="text-[10px] text-gray-400">Live Requests</span>
+                                <span class="font-bold text-slate-700 text-xs md:text-sm block" data-i18n="bloodFeed">Blood Feed</span>
+                                <span class="text-[10px] text-gray-400" data-i18n="liveRequests">Live Requests</span>
                             </div>
                             
                             <div onclick="navToMyRequests()" class="bg-white p-3.5 md:p-5 rounded-2xl md:rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] active:scale-95 transition cursor-pointer border border-slate-100 group hover:border-orange-100 relative overflow-hidden">
                                 <div class="absolute top-0 right-0 w-12 h-12 md:w-16 md:h-16 bg-orange-50 rounded-bl-full -mr-3 -mt-3 transition group-hover:bg-orange-100"></div>
                                 <div class="w-9 h-9 md:w-11 md:h-11 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center text-base md:text-xl mb-2.5 group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300 shadow-sm relative z-10"><i class="fa-solid fa-list-check"></i></div>
-                                <span class="font-bold text-slate-700 text-xs md:text-sm block">My Requests</span>
-                                <span class="text-[10px] text-gray-400">Status & Edit</span>
+                                <span class="font-bold text-slate-700 text-xs md:text-sm block" data-i18n="myRequests">My Requests</span>
+                                <span class="text-[10px] text-gray-400" data-i18n="statusEdit">Status & Edit</span>
                             </div>
 
                             <div onclick="openModal('benefits-modal')" class="bg-white p-3.5 md:p-5 rounded-2xl md:rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] active:scale-95 transition cursor-pointer border border-slate-100 group hover:border-emerald-100 relative overflow-hidden">
                                 <div class="absolute top-0 right-0 w-12 h-12 md:w-16 md:h-16 bg-emerald-50 rounded-bl-full -mr-3 -mt-3 transition group-hover:bg-emerald-100"></div>
                                 <div class="w-9 h-9 md:w-11 md:h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-base md:text-xl mb-2.5 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 shadow-sm relative z-10"><i class="fa-solid fa-heart-circle-check"></i></div>
-                                <span class="font-bold text-slate-700 text-xs md:text-sm block">Benefits</span>
-                                <span class="text-[10px] text-gray-400">Why Donate?</span>
+                                <span class="font-bold text-slate-700 text-xs md:text-sm block" data-i18n="benefits">Benefits</span>
+                                <span class="text-[10px] text-gray-400" data-i18n="whyDonate">Why Donate?</span>
                             </div>
 
                             <div onclick="openTeamModal()" class="bg-white p-3.5 md:p-5 rounded-2xl md:rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] active:scale-95 transition cursor-pointer border border-slate-100 group hover:border-sky-100 relative overflow-hidden">
                                 <div class="absolute top-0 right-0 w-12 h-12 md:w-16 md:h-16 bg-sky-50 rounded-bl-full -mr-3 -mt-3 transition group-hover:bg-sky-100"></div>
                                 <div class="w-9 h-9 md:w-11 md:h-11 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-base md:text-xl mb-2.5 group-hover:bg-sky-600 group-hover:text-white transition-colors duration-300 shadow-sm relative z-10"><i class="fa-solid fa-users"></i></div>
-                                <span class="font-bold text-slate-700 text-xs md:text-sm block">Volunteers</span>
-                                <span class="text-[10px] text-gray-400">The Heroes</span>
+                                <span class="font-bold text-slate-700 text-xs md:text-sm block" data-i18n="volunteers">Volunteers</span>
+                                <span class="text-[10px] text-gray-400" data-i18n="theHeroes">The Heroes</span>
                             </div>
                         </div>
 
                         <!-- Daily Insight -->
                         <div class="bg-slate-800 rounded-2xl p-4 md:p-5 relative overflow-hidden flex items-center justify-between shadow-md">
                              <div class="relative z-10">
-                                <p class="text-[9px] md:text-[10px] font-bold text-yellow-400 mb-1 uppercase tracking-widest">Daily Insight</p>
-                                <p class="text-xs md:text-sm text-slate-200 font-medium leading-relaxed italic">"Blood is a life, pass it on."</p>
+                                <p class="text-[9px] md:text-[10px] font-bold text-yellow-400 mb-1 uppercase tracking-widest" data-i18n="dailyInsight">Daily Insight</p>
+                                <p class="text-xs md:text-sm text-slate-200 font-medium leading-relaxed italic" data-i18n="dailyQuote">"Blood is a life, pass it on."</p>
                              </div>
                              <i class="fa-solid fa-quote-right text-5xl text-white opacity-5 absolute -right-2 -bottom-2"></i>
                         </div>
@@ -381,66 +369,73 @@
                 <!-- NOTIFICATIONS PAGE -->
                 <div id="page-notifications" class="hidden h-full flex flex-col fade-in pb-20 md:pb-6 max-w-4xl mx-auto">
                     <div class="bg-white p-4 shadow-sm mb-2 border-b">
-                        <h2 class="font-bold text-lg md:text-xl text-gray-800">Notifications</h2>
-                        <p class="text-xs text-gray-500">Requests matching your blood group</p>
+                        <h2 class="font-bold text-lg md:text-xl text-gray-800" data-i18n="notifTitle">Notifications</h2>
+                        <p class="text-xs text-gray-500" data-i18n="notifSub">Requests matching your blood group</p>
                     </div>
                     <div id="notification-list" class="p-4 space-y-3 overflow-y-auto flex-1">
-                        <p class="text-center text-gray-400 mt-10 text-sm">No new notifications.</p>
+                        <p class="text-center text-gray-400 mt-10 text-sm" data-i18n="noNotif">No new notifications.</p>
                     </div>
                 </div>
 
-                <!-- SEARCH PAGE -->
+                <!-- SEARCH PAGE (REFINED & SLIM SEARCH BAR) -->
                 <div id="page-search" class="hidden h-full flex flex-col fade-in pb-20 md:pb-6 bg-gray-50">
-                    <div class="bg-rose-600 px-5 pt-4 pb-6 rounded-b-[24px] md:rounded-b-[32px] shadow-lg shrink-0 relative z-10 max-w-5xl mx-auto w-full">
-                        <h2 class="text-white text-center text-lg md:text-xl font-bold mb-4 tracking-wide">Find Blood Donors</h2>
+                    <div class="bg-rose-600 px-4 py-3 md:py-4 rounded-b-2xl md:rounded-b-3xl shadow-md shrink-0 relative z-10 max-w-5xl mx-auto w-full">
+                        <h2 class="text-white text-center text-sm md:text-base font-bold mb-2 tracking-wide" data-i18n="findDonorsTitle">Find Blood Donors</h2>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-4 gap-2.5">
+                        <div class="space-y-2 md:space-y-0 md:grid md:grid-cols-4 md:gap-2.5">
                             <div class="relative md:col-span-2">
-                                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 transform -translate-y-1/2 text-rose-500 text-sm"></i>
-                                <input type="text" id="search-text" placeholder="Name, Phone, or Upazila..." class="w-full pl-10 pr-4 py-2.5 md:py-3 rounded-xl text-xs md:text-sm focus:outline-none shadow text-gray-700 font-medium">
+                                <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-rose-500 text-xs"></i>
+                                <input type="text" id="search-text" placeholder="Name, Phone, or Upazila..." data-i18n-ph="searchPh" class="w-full pl-8 pr-3 py-1.5 md:py-2 rounded-lg text-xs md:text-sm focus:outline-none shadow text-gray-700 font-medium">
                             </div>
-                            <div class="relative">
-                                <select id="search-blood" class="w-full px-3 py-2.5 md:py-3 rounded-xl text-xs md:text-sm font-bold text-gray-600 focus:outline-none shadow bg-white">
-                                    <option value="All">All Blood Groups</option>
-                                    <option value="A+">A+</option>
-                                    <option value="B+">B+</option>
-                                    <option value="O+">O+</option>
-                                    <option value="AB+">AB+</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B-">B-</option>
-                                    <option value="O-">O-</option>
-                                    <option value="AB-">AB-</option>
-                                </select>
-                            </div>
-                            <div class="relative">
-                                <select id="search-district" class="district-select w-full px-3 py-2.5 md:py-3 rounded-xl text-xs md:text-sm font-bold text-gray-600 focus:outline-none shadow bg-white">
-                                    <option value="">All Districts</option>
-                                </select>
+                            <div class="grid grid-cols-2 gap-2 md:contents">
+                                <div class="relative">
+                                    <select id="search-blood" class="w-full px-2 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-bold text-gray-600 focus:outline-none shadow bg-white">
+                                        <option value="All" data-i18n="allBlood">All Blood Groups</option>
+                                        <option value="A+">A+</option>
+                                        <option value="B+">B+</option>
+                                        <option value="O+">O+</option>
+                                        <option value="AB+">AB+</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B-">B-</option>
+                                        <option value="O-">O-</option>
+                                        <option value="AB-">AB-</option>
+                                    </select>
+                                </div>
+                                <div class="relative">
+                                    <select id="search-district" class="district-select w-full px-2 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-bold text-gray-600 focus:outline-none shadow bg-white">
+                                        <option value="" data-i18n="allDistricts">All Districts</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
-                        <button onclick="searchDonors()" class="w-full md:w-auto md:px-8 mx-auto block bg-red-800 bg-opacity-30 border border-rose-400 text-white py-2 rounded-xl text-xs md:text-sm font-bold mt-3 hover:bg-rose-700 transition"><i class="fa-solid fa-filter mr-2"></i>Search / Refresh</button>
+                        <button onclick="searchDonors()" class="w-full md:w-auto md:px-8 mx-auto block bg-red-800 bg-opacity-30 border border-rose-400 text-white py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-bold mt-2 hover:bg-rose-700 transition">
+                            <i class="fa-solid fa-filter mr-1.5"></i><span data-i18n="searchBtn">Search / Refresh</span>
+                        </button>
                     </div>
 
-                    <div id="search-stats" class="px-5 py-3 hidden max-w-5xl mx-auto w-full">
+                    <div id="search-stats" class="px-4 py-2 hidden max-w-5xl mx-auto w-full">
                         <div class="flex justify-between items-center">
-                            <div><h3 class="font-bold text-gray-700 text-sm md:text-base"><span id="total-found">0</span> Donors Found</h3><p class="text-green-600 text-xs font-medium"><span id="total-available">0</span> Available Now</p></div>
-                            <div class="bg-rose-50 text-rose-600 px-3 py-1 rounded-full text-[11px] font-bold border border-rose-100 shadow-sm">Live Search</div>
+                            <div>
+                                <h3 class="font-bold text-gray-700 text-xs md:text-sm"><span id="total-found">0</span> <span data-i18n="donorsFound">Donors Found</span></h3>
+                                <p class="text-green-600 text-[11px] font-medium"><span id="total-available">0</span> <span data-i18n="availableNow">Available Now</span></p>
+                            </div>
+                            <div class="bg-rose-50 text-rose-600 px-2.5 py-0.5 rounded-full text-[10px] font-bold border border-rose-100 shadow-sm" data-i18n="liveSearch">Live Search</div>
                         </div>
                     </div>
 
-                    <div id="donors-list" class="flex-1 overflow-y-auto px-4 md:px-8 pt-2 pb-20 md:pb-6 space-y-3 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 max-w-5xl mx-auto w-full">
-                        <div class="text-center mt-10 opacity-50 col-span-full"><i class="fa-solid fa-users-viewfinder text-5xl text-gray-300 mb-3"></i><p class="text-gray-400 text-sm">Searching for donors...</p></div>
+                    <div id="donors-list" class="flex-1 overflow-y-auto px-4 md:px-8 pt-1 pb-20 md:pb-6 space-y-2.5 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 max-w-5xl mx-auto w-full">
+                        <div class="text-center mt-10 opacity-50 col-span-full"><i class="fa-solid fa-users-viewfinder text-5xl text-gray-300 mb-3"></i><p class="text-gray-400 text-sm" data-i18n="searchingDonors">Searching for donors...</p></div>
                     </div>
                 </div>
 
                 <!-- CREATE REQUEST PAGE -->
                 <div id="page-request" class="hidden h-full flex flex-col p-4 md:p-6 fade-in bg-slate-50 max-w-4xl mx-auto w-full">
-                    <h2 class="font-bold text-lg md:text-xl mb-3 text-rose-600">Blood Requests</h2>
+                    <h2 class="font-bold text-lg md:text-xl mb-3 text-rose-600" data-i18n="reqTitle">Blood Requests</h2>
                     
                     <div class="flex bg-gray-200 p-1 rounded-xl mb-4 shrink-0 max-w-md">
-                        <button onclick="switchReqTab('new')" id="tab-req-new" class="flex-1 py-2 rounded-lg text-xs md:text-sm font-bold bg-white text-rose-600 shadow transition">New Request</button>
-                        <button onclick="switchReqTab('all')" id="tab-req-all" class="flex-1 py-2 rounded-lg text-xs md:text-sm font-bold text-gray-500 transition">My Requests</button>
+                        <button onclick="switchReqTab('new')" id="tab-req-new" class="flex-1 py-2 rounded-lg text-xs md:text-sm font-bold bg-white text-rose-600 shadow transition" data-i18n="newReqTab">New Request</button>
+                        <button onclick="switchReqTab('all')" id="tab-req-all" class="flex-1 py-2 rounded-lg text-xs md:text-sm font-bold text-gray-500 transition" data-i18n="myReqTab">My Requests</button>
                     </div>
 
                     <div id="view-req-new" class="flex-1 overflow-y-auto pb-20 md:pb-6">
@@ -452,8 +447,8 @@
 
                             <div class="bg-red-50 border border-red-100 p-3 rounded-xl flex justify-between items-center">
                                 <div>
-                                    <div class="flex items-center gap-2"><i class="fa-solid fa-bell text-red-600 animate-pulse"></i><span class="font-bold text-red-700 text-xs md:text-sm">Emergency Request?</span></div>
-                                    <p class="text-[10px] text-red-500 mt-0.5 leading-tight">Priority highlight for donors.</p>
+                                    <div class="flex items-center gap-2"><i class="fa-solid fa-bell text-red-600 animate-pulse"></i><span class="font-bold text-red-700 text-xs md:text-sm" data-i18n="emergencyLabel">Emergency Request?</span></div>
+                                    <p class="text-[10px] text-red-500 mt-0.5 leading-tight" data-i18n="emergencySub">Priority highlight for donors.</p>
                                 </div>
                                 <label class="relative inline-flex items-center cursor-pointer">
                                     <input type="checkbox" id="req-emergency" class="sr-only peer">
@@ -462,12 +457,12 @@
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                <input type="text" id="req-patient" placeholder="Patient Name" class="w-full p-3 bg-slate-50 rounded-lg border focus:outline-none focus:ring-1 focus:ring-rose-500 text-xs md:text-sm">
-                                <input type="text" id="req-problem" placeholder="Problem / Disease (e.g. Surgery)" class="w-full p-3 bg-slate-50 rounded-lg border focus:outline-none focus:ring-1 focus:ring-rose-500 text-xs md:text-sm">
+                                <input type="text" id="req-patient" placeholder="Patient Name" data-i18n-ph="patientPh" class="w-full p-3 bg-slate-50 rounded-lg border focus:outline-none focus:ring-1 focus:ring-rose-500 text-xs md:text-sm">
+                                <input type="text" id="req-problem" placeholder="Problem / Disease (e.g. Surgery)" data-i18n-ph="problemPh" class="w-full p-3 bg-slate-50 rounded-lg border focus:outline-none focus:ring-1 focus:ring-rose-500 text-xs md:text-sm">
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                                <input type="text" id="req-hospital" placeholder="Hospital Name" class="w-full p-3 bg-slate-50 rounded-lg border focus:outline-none focus:ring-1 focus:ring-rose-500 text-xs md:text-sm">
+                                <input type="text" id="req-hospital" placeholder="Hospital Name" data-i18n-ph="hospitalPh" class="w-full p-3 bg-slate-50 rounded-lg border focus:outline-none focus:ring-1 focus:ring-rose-500 text-xs md:text-sm">
                                 <select id="req-blood" class="w-full p-3 bg-slate-50 rounded-lg border focus:outline-none focus:ring-1 focus:ring-rose-500 text-xs md:text-sm text-gray-600">
                                     <option value="A+">A+</option>
                                     <option value="B+">B+</option>
@@ -483,16 +478,16 @@
 
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                                 <select id="req-location" class="district-select w-full p-3 bg-slate-50 rounded-lg border focus:outline-none focus:ring-1 focus:ring-rose-500 text-xs md:text-sm text-gray-600">
-                                    <option value="" disabled selected>Select District</option>
+                                    <option value="" disabled selected data-i18n="districtPh">Select District</option>
                                 </select>
-                                <input type="text" id="req-upazila" placeholder="Upazila / Exact Location" class="w-full p-3 bg-slate-50 rounded-lg border focus:outline-none focus:ring-1 focus:ring-rose-500 text-xs md:text-sm">
-                                <input type="tel" id="req-phone" placeholder="Contact Number" class="w-full p-3 bg-slate-50 rounded-lg border focus:outline-none focus:ring-1 focus:ring-rose-500 text-xs md:text-sm">
+                                <input type="text" id="req-upazila" placeholder="Upazila / Exact Location" data-i18n-ph="upazilaPh" class="w-full p-3 bg-slate-50 rounded-lg border focus:outline-none focus:ring-1 focus:ring-rose-500 text-xs md:text-sm">
+                                <input type="tel" id="req-phone" placeholder="Contact Number" data-i18n-ph="phonePh" class="w-full p-3 bg-slate-50 rounded-lg border focus:outline-none focus:ring-1 focus:ring-rose-500 text-xs md:text-sm">
                             </div>
 
-                            <textarea id="req-note" rows="2" placeholder="Additional Information (Optional)" class="w-full p-3 bg-slate-50 rounded-lg border focus:outline-none focus:ring-1 focus:ring-rose-500 text-xs md:text-sm resize-none"></textarea>
+                            <textarea id="req-note" rows="2" placeholder="Additional Information (Optional)" data-i18n-ph="notePh" class="w-full p-3 bg-slate-50 rounded-lg border focus:outline-none focus:ring-1 focus:ring-rose-500 text-xs md:text-sm resize-none"></textarea>
                             
                             <button onclick="submitRequest()" id="btn-post-req" class="w-full bg-rose-600 text-white py-3 rounded-xl font-bold shadow-lg mt-2 flex justify-center items-center hover:bg-rose-700 transition text-sm">
-                                <span id="btn-post-text">Post Request</span>
+                                <span id="btn-post-text" data-i18n="postBtn">Post Request</span>
                                 <div class="loader ml-2" id="post-loader"></div>
                             </button>
                         </div>
@@ -500,7 +495,7 @@
 
                     <div id="view-req-all" class="hidden flex-1 overflow-y-auto pb-20 md:pb-6">
                         <div id="all-requests-list-view" class="space-y-3 md:space-y-0 md:grid md:grid-cols-2 md:gap-4">
-                            <p class="text-center text-gray-400 mt-10 text-sm col-span-full">Loading your requests...</p>
+                            <p class="text-center text-gray-400 mt-10 text-xs col-span-full">Loading your requests...</p>
                         </div>
                     </div>
                 </div>
@@ -508,11 +503,11 @@
                 <!-- FEED PAGE -->
                 <div id="page-feed" class="hidden h-full overflow-y-auto p-4 md:p-6 fade-in pb-20 md:pb-6 bg-slate-50 max-w-5xl mx-auto w-full">
                     <div class="flex items-center gap-2 mb-4">
-                        <h2 class="font-bold text-lg md:text-xl text-slate-800">Live Blood Feed</h2>
+                        <h2 class="font-bold text-lg md:text-xl text-slate-800" data-i18n="feedTitle">Live Blood Feed</h2>
                         <span class="w-2.5 h-2.5 bg-red-600 rounded-full animate-ping"></span>
                     </div>
                     <div id="feed-list" class="space-y-3 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4">
-                        <p class="text-center text-gray-400 mt-10 text-sm col-span-full">Loading feed...</p>
+                        <p class="text-center text-gray-400 mt-10 text-sm col-span-full" data-i18n="loadingFeed">Loading feed...</p>
                     </div>
                 </div>
 
@@ -523,7 +518,6 @@
                             <div class="flex items-center gap-2 text-white"><i class="fa-solid fa-droplet"></i><span class="font-bold text-base">NJBDS</span></div>
                         </div>
                         <div class="flex items-center gap-4 mt-2">
-                            <!-- Compact Avatar Circle on Mobile -->
                             <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center border-4 border-rose-400 shadow-lg relative z-10">
                                 <span id="profile-bg" class="text-rose-600 font-bold text-xl md:text-2xl tracking-tighter">--</span>
                             </div>
@@ -538,31 +532,30 @@
                     <div class="mx-5 -mt-8 bg-white rounded-2xl shadow-md flex py-3.5 relative z-20 border border-slate-100">
                         <div class="w-1/2 border-r border-gray-100 flex flex-col items-center justify-center">
                             <span class="text-xl md:text-2xl font-bold text-gray-800" id="profile-donations-count">0</span>
-                            <span class="text-xs text-gray-500 font-medium">Donations</span>
+                            <span class="text-xs text-gray-500 font-medium" data-i18n="donationsLabel">Donations</span>
                         </div>
                         <div class="w-1/2 flex flex-col items-center justify-center">
                             <span class="text-base md:text-lg font-bold text-green-600" id="status-text">Active</span>
-                            <span class="text-xs text-gray-500 font-medium">Status</span>
+                            <span class="text-xs text-gray-500 font-medium" data-i18n="statusLabel">Status</span>
                         </div>
                     </div>
 
                     <div class="px-5 mt-5 space-y-3.5">
-                        
                         <!-- Last Donation Date & Eligibility Box -->
                         <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
                             <div class="flex justify-between items-center mb-2">
-                                <span class="font-bold text-gray-700 text-xs md:text-sm"><i class="fa-solid fa-calendar-day text-rose-500 mr-1.5"></i>Last Donation Date</span>
+                                <span class="font-bold text-gray-700 text-xs md:text-sm"><i class="fa-solid fa-calendar-day text-rose-500 mr-1.5"></i><span data-i18n="lastDonationTitle">Last Donation Date</span></span>
                                 <span id="eligibility-status-badge" class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-green-100 text-green-700">Eligible</span>
                             </div>
                             <div class="flex gap-2">
                                 <input type="date" id="profile-last-donation-date" class="flex-1 p-2 bg-slate-50 border border-slate-200 rounded-lg text-xs text-gray-700 focus:outline-none focus:ring-1 focus:ring-rose-500">
-                                <button onclick="saveLastDonationDate()" class="bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold px-3 py-2 rounded-lg transition shadow">Save</button>
+                                <button onclick="saveLastDonationDate()" class="bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold px-3 py-2 rounded-lg transition shadow" data-i18n="saveBtn">Save</button>
                             </div>
                             <p id="eligibility-hint" class="text-[11px] text-gray-500 mt-2"></p>
                         </div>
 
                         <div class="bg-white p-3.5 rounded-xl shadow-sm flex justify-between items-center border border-slate-100">
-                            <div class="font-bold text-gray-700 text-xs md:text-sm">Available to Donate</div>
+                            <div class="font-bold text-gray-700 text-xs md:text-sm" data-i18n="availToDonate">Available to Donate</div>
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" id="toggle-availability" class="sr-only peer" onchange="toggleAvailability()">
                                 <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-rose-500"></div>
@@ -572,7 +565,7 @@
                         <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100">
                             <button onclick="toggleHistory()" class="w-full p-3.5 flex items-center gap-3 text-left hover:bg-gray-50 transition">
                                 <div class="w-7 h-7 rounded-full bg-rose-50 flex items-center justify-center text-rose-500 text-xs"><i class="fa-solid fa-clock-rotate-left"></i></div>
-                                <span class="flex-1 font-bold text-gray-700 text-xs md:text-sm">Donation History</span>
+                                <span class="flex-1 font-bold text-gray-700 text-xs md:text-sm" data-i18n="donationHistory">Donation History</span>
                                 <i class="fa-solid fa-chevron-right text-gray-400 text-xs transition-transform" id="history-arrow"></i>
                             </button>
                             <div id="history-section" class="hidden border-t border-gray-100 bg-gray-50 p-3 space-y-2">
@@ -582,20 +575,20 @@
 
                         <button onclick="handleLogout()" class="w-full bg-white p-3.5 rounded-xl shadow-sm flex items-center gap-3 text-left text-red-600 hover:bg-red-50 transition border border-slate-100">
                             <div class="w-7 h-7 rounded-full bg-red-50 flex items-center justify-center text-xs"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
-                            <span class="font-bold text-xs md:text-sm">Logout</span>
+                            <span class="font-bold text-xs md:text-sm" data-i18n="logoutBtn">Logout</span>
                         </button>
                     </div>
                 </div>
 
             </div> 
 
-            <!-- Bottom Nav (App view on Mobile, Hidden on Desktop) -->
+            <!-- Bottom Nav -->
             <div class="bg-white border-t flex justify-around py-2.5 px-2 pb-5 z-30 fixed bottom-0 w-full md:hidden shrink-0">
-                <button onclick="navTo('page-home')" class="nav-btn text-rose-600 flex flex-col items-center"><i class="fa-solid fa-house text-base mb-1"></i><span class="text-[10px]">Home</span></button>
-                <button onclick="navTo('page-search')" class="nav-btn text-gray-400 flex flex-col items-center"><i class="fa-solid fa-magnifying-glass text-base mb-1"></i><span class="text-[10px]">Search</span></button>
+                <button onclick="navTo('page-home')" class="nav-btn text-rose-600 flex flex-col items-center"><i class="fa-solid fa-house text-base mb-1"></i><span class="text-[10px]" data-i18n="navHome">Home</span></button>
+                <button onclick="navTo('page-search')" class="nav-btn text-gray-400 flex flex-col items-center"><i class="fa-solid fa-magnifying-glass text-base mb-1"></i><span class="text-[10px]" data-i18n="navSearch">Search</span></button>
                 <button onclick="navTo('page-request')" class="relative -top-5 bg-rose-600 text-white w-11 h-11 rounded-full shadow-lg flex items-center justify-center border-4 border-gray-100 active:scale-95 transition"><i class="fa-solid fa-plus text-lg"></i></button>
-                <button onclick="navTo('page-feed')" class="nav-btn text-gray-400 flex flex-col items-center"><i class="fa-solid fa-rss text-base mb-1"></i><span class="text-[10px]">Feed</span></button>
-                <button onclick="navTo('page-profile')" class="nav-btn text-gray-400 flex flex-col items-center"><i class="fa-solid fa-user text-base mb-1"></i><span class="text-[10px]">Profile</span></button>
+                <button onclick="navTo('page-feed')" class="nav-btn text-gray-400 flex flex-col items-center"><i class="fa-solid fa-rss text-base mb-1"></i><span class="text-[10px]" data-i18n="navFeed">Feed</span></button>
+                <button onclick="navTo('page-profile')" class="nav-btn text-gray-400 flex flex-col items-center"><i class="fa-solid fa-user text-base mb-1"></i><span class="text-[10px]" data-i18n="navProfile">Profile</span></button>
             </div>
         </div>
 
@@ -612,19 +605,19 @@
                             <div id="modal-status-dot" class="absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full"></div>
                         </div>
                         <h2 id="modal-name" class="text-xl font-bold text-gray-800">Donor Name</h2>
-                        <p id="modal-role" class="text-rose-500 text-xs font-bold uppercase tracking-widest mt-1">Donor</p>
+                        <p id="modal-role" class="text-rose-500 text-xs font-bold uppercase tracking-widest mt-1" data-i18n="roleDonor">Donor</p>
                     </div>
                     <div class="bg-gray-50 rounded-2xl p-4 space-y-3 mb-6">
                         <div class="flex items-center gap-3 border-b border-gray-200 pb-2">
                             <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-rose-500 shadow-sm text-xs"><i class="fa-solid fa-location-dot"></i></div>
-                            <div><p class="text-[10px] text-gray-500 uppercase">Location</p><p id="modal-location" class="text-xs font-semibold text-gray-800">Dhaka</p></div>
+                            <div><p class="text-[10px] text-gray-500 uppercase" data-i18n="location">Location</p><p id="modal-location" class="text-xs font-semibold text-gray-800">Dhaka</p></div>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-rose-500 shadow-sm text-xs"><i class="fa-solid fa-calendar-check"></i></div>
-                            <div><p class="text-[10px] text-gray-500 uppercase">Availability</p><p id="modal-status-text" class="text-xs font-semibold text-gray-800">Available</p></div>
+                            <div><p class="text-[10px] text-gray-500 uppercase" data-i18n="statusLabel">Availability</p><p id="modal-status-text" class="text-xs font-semibold text-gray-800">Available</p></div>
                         </div>
                     </div>
-                    <a id="modal-call-btn" href="#" class="w-full bg-rose-600 text-white py-3.5 rounded-xl font-bold shadow-lg shadow-red-200 flex justify-center items-center gap-2 active:scale-95 transition hover:bg-rose-700 text-sm"><i class="fa-solid fa-phone"></i> Call Now</a>
+                    <a id="modal-call-btn" href="#" class="w-full bg-rose-600 text-white py-3.5 rounded-xl font-bold shadow-lg shadow-red-200 flex justify-center items-center gap-2 active:scale-95 transition hover:bg-rose-700 text-sm"><i class="fa-solid fa-phone"></i> <span data-i18n="callNow">Call Now</span></a>
                 </div>
             </div>
         </div>
@@ -639,19 +632,19 @@
                     <div class="mb-4">
                         <span id="req-modal-badge" class="hidden bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded animate-pulse shadow-sm mb-2 inline-block"><i class="fa-solid fa-triangle-exclamation mr-1"></i>EMERGENCY</span>
                         <div class="flex justify-between items-end">
-                            <div><h2 class="text-xs text-gray-500 font-medium">Blood Needed</h2><h1 id="req-modal-blood" class="text-4xl font-black text-rose-600 tracking-tight">AB+</h1></div>
+                            <div><h2 class="text-xs text-gray-500 font-medium" data-i18n="need">Blood Needed</h2><h1 id="req-modal-blood" class="text-4xl font-black text-rose-600 tracking-tight">AB+</h1></div>
                             <div class="text-right"><p class="text-[10px] text-gray-400">Date needed</p><p id="req-modal-date" class="text-xs font-bold text-gray-800">--</p></div>
                         </div>
                     </div>
                     <div class="bg-rose-50 rounded-2xl p-4 space-y-3 mb-5 border border-rose-100">
                         <div><p class="text-[10px] text-rose-400 uppercase font-bold">Patient & Problem</p><h3 id="req-modal-patient" class="text-base font-bold text-gray-800">Patient Name</h3><p id="req-modal-problem" class="text-xs text-gray-600 italic">--</p></div>
                         <div class="grid grid-cols-2 gap-3">
-                            <div><p class="text-[10px] text-rose-400 uppercase font-bold">Hospital</p><p id="req-modal-hospital" class="text-xs font-semibold text-gray-700">Hospital</p></div>
-                            <div><p class="text-[10px] text-rose-400 uppercase font-bold">Location</p><p id="req-modal-location" class="text-xs font-semibold text-gray-700">Dhaka</p></div>
+                            <div><p class="text-[10px] text-rose-400 uppercase font-bold" data-i18n="hospitalPh">Hospital</p><p id="req-modal-hospital" class="text-xs font-semibold text-gray-700">Hospital</p></div>
+                            <div><p class="text-[10px] text-rose-400 uppercase font-bold" data-i18n="location">Location</p><p id="req-modal-location" class="text-xs font-semibold text-gray-700">Dhaka</p></div>
                         </div>
                         <div id="req-modal-note-area" class="border-t border-rose-100 pt-2"><p class="text-[10px] text-rose-400 uppercase font-bold">Note</p><p id="req-modal-note" class="text-xs text-gray-600">No additional details.</p></div>
                     </div>
-                    <a id="req-modal-call" href="#" class="w-full bg-rose-600 text-white py-3.5 rounded-xl font-bold shadow-lg shadow-red-200 flex justify-center items-center gap-2 active:scale-95 transition hover:bg-rose-700 text-sm"><i class="fa-solid fa-phone"></i> Contact Now</a>
+                    <a id="req-modal-call" href="#" class="w-full bg-rose-600 text-white py-3.5 rounded-xl font-bold shadow-lg shadow-red-200 flex justify-center items-center gap-2 active:scale-95 transition hover:bg-rose-700 text-sm"><i class="fa-solid fa-phone"></i> <span data-i18n="contactNow">Contact Now</span></a>
                 </div>
             </div>
         </div>
@@ -662,8 +655,8 @@
             <div class="absolute bottom-0 w-full bg-white rounded-t-[30px] shadow-2xl modal-enter md:relative md:w-96 md:rounded-2xl md:m-auto md:top-1/2 md:transform md:-translate-y-1/2 max-h-[80vh] overflow-y-auto">
                 <div class="p-6 relative">
                     <button onclick="closeModal('benefits-modal')" class="absolute top-5 right-5 text-gray-400 bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
-                    <h2 class="text-lg font-bold text-gray-800 mb-3 border-b pb-2">Benefits of Blood Donation</h2>
-                    <div class="space-y-3 text-xs md:text-sm text-gray-600">
+                    <h2 class="text-lg font-bold text-gray-800 mb-3 border-b pb-2" data-i18n="benefits">Benefits of Blood Donation</h2>
+                    <div class="space-y-3 text-xs md:text-sm text-gray-600" id="benefits-content">
                         <div class="flex gap-3"><div class="text-green-500 text-base"><i class="fa-solid fa-heart-pulse"></i></div><p><strong>Heart Health:</strong> Regular blood donation helps maintain iron balance, reducing the risk of heart disease.</p></div>
                         <div class="flex gap-3"><div class="text-red-500 text-base"><i class="fa-solid fa-seedling"></i></div><p><strong>New Cell Generation:</strong> After donation, the body replenishes blood with fresh new cells.</p></div>
                         <div class="flex gap-3"><div class="text-blue-500 text-base"><i class="fa-solid fa-weight-scale"></i></div><p><strong>Calorie Burn:</strong> Donating one pint of blood can burn up to 650 calories.</p></div>
@@ -680,7 +673,7 @@
             <div class="absolute bottom-0 w-full bg-white rounded-t-[30px] shadow-2xl modal-enter md:relative md:w-96 md:rounded-2xl md:m-auto md:top-1/2 md:transform md:-translate-y-1/2">
                 <div class="p-6 relative">
                     <button onclick="closeModal('team-modal')" class="absolute top-5 right-5 text-gray-400 bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
-                    <h2 class="text-lg font-bold text-gray-800 mb-4 text-center">Our Team</h2>
+                    <h2 class="text-lg font-bold text-gray-800 mb-4 text-center" data-i18n="volunteers">Our Team</h2>
                     <div id="team-list" class="space-y-3 max-h-[60vh] overflow-y-auto pb-4"><p class="text-center text-gray-400 mt-4 text-xs">Loading team members...</p></div>
                     <p class="text-center text-[10px] text-gray-400 mt-2 pt-2 border-t border-gray-100">NJBDS App | Version 1.2</p>
                 </div>
@@ -719,6 +712,206 @@
         
         let isEditing = false;
         let editingId = null;
+
+        // --- ACCURATE TRANSLATION DICTIONARY ---
+        const translations = {
+            en: {
+                splashSub: "Give Blood-Save Life",
+                authWelcome: "Welcome",
+                authSub: "Sign in to continue",
+                login: "Login",
+                register: "Register",
+                forgotPass: "Forgot Password?",
+                namePh: "Full Name",
+                emailPh: "Email Address",
+                phonePh: "Phone Number (11 Digits)",
+                passPh: "Password",
+                createPassPh: "Create Password",
+                roleDonor: "Donor",
+                roleReceiver: "Receiver",
+                selectDistrict: "Select District",
+                upazilaPh: "Upazila / Area",
+                navHome: "Home",
+                navSearch: "Find Donor",
+                navRequest: "Request",
+                navFeed: "Live Feed",
+                navProfile: "Profile",
+                welcomeSub: "Welcome to NJBDS",
+                heroText: "Your donation is a gift of life. Ready to save a soul today?",
+                btnRequest: "Request",
+                btnFindDonor: "Find Donor",
+                dashboardTitle: "Dashboard",
+                bloodFeed: "Blood Feed",
+                liveRequests: "Live Requests",
+                myRequests: "My Requests",
+                statusEdit: "Status & Edit",
+                benefits: "Benefits",
+                whyDonate: "Why Donate?",
+                volunteers: "Volunteers",
+                theHeroes: "The Heroes",
+                dailyInsight: "Daily Insight",
+                dailyQuote: '"Blood is a life, pass it on."',
+                findDonorsTitle: "Find Blood Donors",
+                searchPh: "Name, Phone, or Upazila...",
+                allBlood: "All Blood Groups",
+                allDistricts: "All Districts",
+                searchBtn: "Search / Refresh",
+                donorsFound: "Donors Found",
+                availableNow: "Available Now",
+                liveSearch: "Live Search",
+                searchingDonors: "Searching for donors...",
+                reqTitle: "Blood Requests",
+                newReqTab: "New Request",
+                myReqTab: "My Requests",
+                emergencyLabel: "Emergency Request?",
+                emergencySub: "Priority highlight for donors.",
+                patientPh: "Patient Name",
+                problemPh: "Problem / Disease (e.g. Surgery)",
+                hospitalPh: "Hospital Name",
+                districtPh: "Select District",
+                notePh: "Additional Information (Optional)",
+                postBtn: "Post Request",
+                feedTitle: "Live Blood Feed",
+                loadingFeed: "Loading feed...",
+                donationsLabel: "Donations",
+                statusLabel: "Status",
+                lastDonationTitle: "Last Donation Date",
+                saveBtn: "Save",
+                availToDonate: "Available to Donate",
+                donationHistory: "Donation History",
+                logoutBtn: "Logout",
+                notifTitle: "Notifications",
+                notifSub: "Requests matching your blood group",
+                noNotif: "No new notifications.",
+                need: "Need",
+                location: "Location",
+                callNow: "Call Now",
+                contactNow: "Contact Now",
+                shareText: "Share",
+                donateText: "Donate",
+                editText: "Edit",
+                deleteText: "Delete",
+                availableText: "Available",
+                unavailableText: "Unavailable",
+                activeText: "Active",
+                inactiveText: "Inactive",
+                eligibleText: "Eligible",
+                waitingPeriod: "Waiting Period"
+            },
+            bn: {
+                splashSub: "রক্ত দিন, জীবন বাঁচান",
+                authWelcome: "স্বাগতম",
+                authSub: "চালিয়ে যেতে সাইন ইন করুন",
+                login: "লগইন",
+                register: "নিবন্ধন",
+                forgotPass: "পাসওয়ার্ড ভুলে গেছেন?",
+                namePh: "সম্পূর্ণ নাম",
+                emailPh: "ইমেইল ঠিকানা",
+                phonePh: "মোবাইল নম্বর (১১ ডিজিট)",
+                passPh: "পাসওয়ার্ড",
+                createPassPh: "নতুন পাসওয়ার্ড দিন",
+                roleDonor: "রক্তদাতা",
+                roleReceiver: "গ্রহীতা",
+                selectDistrict: "জেলা নির্বাচন করুন",
+                upazilaPh: "উপজেলা / এলাকা",
+                navHome: "হোম",
+                navSearch: "রক্তদাতা খুঁজুন",
+                navRequest: "রিকোয়েস্ট",
+                navFeed: "লাইভ ফিড",
+                navProfile: "প্রোফাইল",
+                welcomeSub: "NJBDS-এ স্বাগতম",
+                heroText: "আপনার রক্তদান একটি নতুন জীবন। আজই কাউকে বাঁচাতে প্রস্তুত?",
+                btnRequest: "রক্তের অনুরোধ",
+                btnFindDonor: "রক্তদাতা খুঁজুন",
+                dashboardTitle: "ড্যাশবোর্ড",
+                bloodFeed: "ব্লাড ফিড",
+                liveRequests: "জরুরি আবেদন",
+                myRequests: "আমার অনুরোধ",
+                statusEdit: "স্ট্যাটাস ও এডিট",
+                benefits: "উপকারিতা",
+                whyDonate: "কেন রক্ত দেবেন?",
+                volunteers: "স্বেচ্ছাসেবক",
+                theHeroes: "আমাদের বীর",
+                dailyInsight: "প্রতিদিনের বাণী",
+                dailyQuote: '"রক্তই জীবন, ছড়িয়ে দিন সবার মাঝে।"',
+                findDonorsTitle: "রক্তদাতা অনুসন্ধান",
+                searchPh: "নাম, ফোন বা উপজেলা লিখুন...",
+                allBlood: "সকল রক্তের গ্রুপ",
+                allDistricts: "সকল জেলা",
+                searchBtn: "অনুসন্ধান করুন",
+                donorsFound: "জন রক্তদাতা পাওয়া গেছে",
+                availableNow: "জন এখনই প্রস্তুত",
+                liveSearch: "লাইভ সার্চ",
+                searchingDonors: "রক্তদাতা খোঁজা হচ্ছে...",
+                reqTitle: "রক্তের আবেদন",
+                newReqTab: "নতুন আবেদন",
+                myReqTab: "আমার আবেদনসমূহ",
+                emergencyLabel: "জরুরি রক্তের প্রয়োজন?",
+                emergencySub: "রক্তদাতাদের অগ্রাধিকার দিয়ে জানানো হবে।",
+                patientPh: "রোগীর নাম",
+                problemPh: "রোগের বিবরণ / অপারেশন",
+                hospitalPh: "হাসপাতালের নাম",
+                districtPh: "জেলা নির্বাচন করুন",
+                notePh: "অতিরিক্ত তথ্য (ঐচ্ছিক)",
+                postBtn: "আবেদন প্রকাশ করুন",
+                feedTitle: "লাইভ ব্লাড ফিড",
+                loadingFeed: "ফিড লোড হচ্ছে...",
+                donationsLabel: "মোট রক্তদান",
+                statusLabel: "বর্তমান অবস্থা",
+                lastDonationTitle: "সর্বশেষ রক্তদানের তারিখ",
+                saveBtn: "সংরক্ষণ",
+                availToDonate: "রক্তদানে প্রস্তুত",
+                donationHistory: "রক্তদানের ইতিহাস",
+                logoutBtn: "লগআউট",
+                notifTitle: "নোটিফিকেশন",
+                notifSub: "আপনার রক্তের গ্রুপের সাথে মিলে যাওয়া আবেদন",
+                noNotif: "কোনো নতুন নোটিফিকেশন নেই।",
+                need: "প্রয়োজন",
+                location: "স্থান",
+                callNow: "কল করুন",
+                contactNow: "যোগাযোগ করুন",
+                shareText: "শেয়ার",
+                donateText: "রক্ত দেব",
+                editText: "এডিট",
+                deleteText: "মুছুন",
+                availableText: "প্রস্তুত",
+                unavailableText: "অপ্রস্তুত",
+                activeText: "সক্রিয়",
+                inactiveText: "নিষ্ক্রিয়",
+                eligibleText: "উপযুক্ত",
+                waitingPeriod: "অপেক্ষমাণ সময়"
+            }
+        };
+
+        window.currentLang = localStorage.getItem('njbds_lang') || 'en';
+
+        window.toggleLanguage = () => {
+            window.currentLang = window.currentLang === 'en' ? 'bn' : 'en';
+            localStorage.setItem('njbds_lang', window.currentLang);
+            applyLanguage();
+        };
+
+        function applyLanguage() {
+            const lang = window.currentLang;
+            const t = translations[lang];
+
+            const btnLabel = document.getElementById('lang-label');
+            if (btnLabel) btnLabel.innerText = lang === 'en' ? 'বাংলা' : 'English';
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) el.innerText = t[key];
+            });
+
+            document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+                const key = el.getAttribute('data-i18n-ph');
+                if (t[key]) el.placeholder = t[key];
+            });
+
+            if (currentUserData) loadProfile();
+            if (window.currentSearchResults && window.currentSearchResults.length > 0) renderSearchResults();
+            if (window.feedData && window.feedData.length > 0) renderFeedCards();
+        }
 
         // --- 64 DISTRICT DATA ---
         const districtOptionsHTML = `
@@ -841,6 +1034,7 @@
             }
             splash.style.opacity = '0';
             setTimeout(() => splash.style.display = 'none', 500);
+            applyLanguage();
         });
 
         // --- NAVIGATION ---
@@ -928,14 +1122,15 @@
             
             const statusDot = document.getElementById('modal-status-dot');
             const statusText = document.getElementById('modal-status-text');
+            const t = translations[window.currentLang];
             
             if(user.available) {
                 statusDot.className = "absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full";
-                statusText.innerText = "Available Now";
+                statusText.innerText = t.availableText;
                 statusText.className = "text-xs font-semibold text-green-600";
             } else {
                 statusDot.className = "absolute bottom-1 right-1 w-5 h-5 bg-gray-400 border-2 border-white rounded-full";
-                statusText.innerText = "Not Available";
+                statusText.innerText = t.unavailableText;
                 statusText.className = "text-xs font-semibold text-gray-400";
             }
             document.getElementById('donor-modal').classList.remove('hidden');
@@ -1011,7 +1206,7 @@
             isEditing = false;
             editingId = null;
             document.getElementById('edit-mode-banner').classList.add('hidden');
-            document.getElementById('btn-post-text').innerText = "Post Request";
+            document.getElementById('btn-post-text').innerText = translations[window.currentLang].postBtn;
             
             document.getElementById('req-patient').value = "";
             document.getElementById('req-problem').value = "";
@@ -1046,7 +1241,7 @@
             document.getElementById('req-emergency').checked = req.isEmergency || false;
 
             document.getElementById('edit-mode-banner').classList.remove('hidden');
-            document.getElementById('btn-post-text').innerText = "Update Request";
+            document.getElementById('btn-post-text').innerText = window.currentLang === 'bn' ? "আপডেট করুন" : "Update Request";
         };
 
         window.deleteRequest = async (index) => {
@@ -1085,12 +1280,12 @@
         window.handleForgotPassword = async () => {
             const email = document.getElementById('login-email').value.trim();
             if(!email) {
-                showToast("Please enter your email in the box first");
+                showToast(window.currentLang === 'bn' ? "বক্সে আপনার ইমেইল ঠিকানা দিন" : "Please enter your email in the box first");
                 return;
             }
             try {
                 await sendPasswordResetEmail(auth, email);
-                showToast("Password reset link sent to your email!");
+                showToast(window.currentLang === 'bn' ? "পাসওয়ার্ড রিসেট লিংক পাঠানো হয়েছে!" : "Password reset link sent to your email!");
             } catch(e) {
                 showToast(e.message);
             }
@@ -1144,6 +1339,7 @@
             signOut(auth).then(() => { location.reload(); });
         };
 
+        // --- SHOW MAIN APP (FULL NAME DISPLAY) ---
         function showMainApp() {
             document.getElementById('auth-page').classList.add('hidden');
             document.getElementById('auth-page').classList.remove('flex');
@@ -1152,12 +1348,16 @@
             document.getElementById('main-app').classList.remove('hidden');
             document.getElementById('main-app').classList.add('flex');
             
-            if(currentUserData.name) document.getElementById('user-name-display').innerText = currentUserData.name.split(' ')[0];
+            // Displays complete full name
+            if(currentUserData && currentUserData.name) {
+                document.getElementById('user-name-display').innerText = currentUserData.name;
+            }
             
             loadProfile();
             loadGlobalRequests();
             setupNotifications(); 
             navTo('page-home');
+            applyLanguage();
         }
 
         // --- ADMIN PANEL FUNCTIONS ---
@@ -1515,7 +1715,7 @@
                 await updateDoc(doc(db, "requests", reqId), {
                     interestedDonors: arrayUnion(auth.currentUser.uid)
                 });
-                showToast("Thanks! Your response has been recorded.");
+                showToast(window.currentLang === 'bn' ? "আপনার আগ্রহ রেকর্ড করা হয়েছে!" : "Your response has been recorded!");
             } catch (e) {
                 showToast("Error sending response");
             }
@@ -1530,16 +1730,17 @@
                 else if (req.createdAt.seconds) dateStr = new Date(req.createdAt.seconds * 1000).toLocaleDateString();
             }
 
+            const t = translations[window.currentLang];
             const isCompleted = req.status === 'completed';
             const borderClass = isCompleted 
                 ? "border-green-300 bg-gray-50 opacity-75" 
                 : (req.isEmergency ? "border-red-600 bg-red-50/50" : "border-rose-200 bg-white");
                 
             const badgeHTML = isCompleted
-                ? `<span class="bg-green-600 text-white text-[9px] font-bold px-2 py-0.5 rounded shadow-sm"><i class="fa-solid fa-check mr-1"></i>FULFILLED</span>`
+                ? `<span class="bg-green-600 text-white text-[9px] font-bold px-2 py-0.5 rounded shadow-sm"><i class="fa-solid fa-check mr-1"></i>${window.currentLang === 'bn' ? 'সম্পন্ন' : 'FULFILLED'}</span>`
                 : (req.isEmergency 
-                    ? `<span class="bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded animate-pulse shadow-sm"><i class="fa-solid fa-triangle-exclamation mr-1"></i>EMERGENCY</span>`
-                    : `<span class="bg-gray-100 text-gray-600 text-[9px] font-bold px-2 py-0.5 rounded border">Standard</span>`);
+                    ? `<span class="bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded animate-pulse shadow-sm"><i class="fa-solid fa-triangle-exclamation mr-1"></i>${window.currentLang === 'bn' ? 'জরুরি' : 'EMERGENCY'}</span>`
+                    : `<span class="bg-gray-100 text-gray-600 text-[9px] font-bold px-2 py-0.5 rounded border">${window.currentLang === 'bn' ? 'সাধারণ' : 'Standard'}</span>`);
             
             const area = req.upazila ? `${req.upazila}, ${req.location}` : req.location;
 
@@ -1547,14 +1748,14 @@
             if (isMyRequest) {
                 actionButtons = `
                 <div class="flex items-center gap-2 mt-3 border-t border-gray-100 pt-2">
-                    ${!isCompleted ? `<button onclick="event.stopPropagation(); prepareEdit(${index})" class="flex-1 py-1.5 text-xs font-bold text-blue-600 bg-blue-50 rounded hover:bg-blue-100 transition"><i class="fa-solid fa-pen mr-1"></i> Edit</button>` : ''}
-                    <button onclick="event.stopPropagation(); deleteRequest(${index})" class="flex-1 py-1.5 text-xs font-bold text-red-600 bg-red-50 rounded hover:bg-red-100 transition"><i class="fa-solid fa-trash mr-1"></i> Delete</button>
+                    ${!isCompleted ? `<button onclick="event.stopPropagation(); prepareEdit(${index})" class="flex-1 py-1.5 text-xs font-bold text-blue-600 bg-blue-50 rounded hover:bg-blue-100 transition"><i class="fa-solid fa-pen mr-1"></i> ${t.editText}</button>` : ''}
+                    <button onclick="event.stopPropagation(); deleteRequest(${index})" class="flex-1 py-1.5 text-xs font-bold text-red-600 bg-red-50 rounded hover:bg-red-100 transition"><i class="fa-solid fa-trash mr-1"></i> ${t.deleteText}</button>
                 </div>`;
             } else if (!isCompleted) {
                 actionButtons = `
                 <div class="flex items-center gap-2 mt-3 border-t border-gray-100 pt-2">
-                    <button onclick="event.stopPropagation(); shareRequest('${req.patient}', '${req.blood}', '${req.hospital}', '${req.location}', '${req.upazila || ''}', '${req.phone}')" class="flex-1 py-1.5 text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded transition flex justify-center items-center gap-1"><i class="fa-brands fa-whatsapp text-emerald-500"></i> Share</button>
-                    <button onclick="event.stopPropagation(); notifyDonorInterest('${req.id}')" class="flex-1 py-1.5 text-xs font-bold text-rose-700 bg-rose-50 hover:bg-rose-100 rounded transition flex justify-center items-center gap-1"><i class="fa-solid fa-hand-holding-heart text-rose-500"></i> Donate</button>
+                    <button onclick="event.stopPropagation(); shareRequest('${req.patient}', '${req.blood}', '${req.hospital}', '${req.location}', '${req.upazila || ''}', '${req.phone}')" class="flex-1 py-1.5 text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded transition flex justify-center items-center gap-1"><i class="fa-brands fa-whatsapp text-emerald-500"></i> ${t.shareText}</button>
+                    <button onclick="event.stopPropagation(); notifyDonorInterest('${req.id}')" class="flex-1 py-1.5 text-xs font-bold text-rose-700 bg-rose-50 hover:bg-rose-100 rounded transition flex justify-center items-center gap-1"><i class="fa-solid fa-hand-holding-heart text-rose-500"></i> ${t.donateText}</button>
                 </div>`;
             }
 
@@ -1569,7 +1770,7 @@
                     </div>
                     <div class="flex items-center justify-between">
                         <div>
-                            <h4 class="font-bold text-gray-800 text-sm">Need <span class="text-rose-600 text-lg font-black">${req.blood}</span></h4>
+                            <h4 class="font-bold text-gray-800 text-sm">${t.need} <span class="text-rose-600 text-lg font-black">${req.blood}</span></h4>
                             <p class="text-xs text-gray-600 font-medium mt-0.5">${req.patient}</p>
                             <p class="mt-1"><span class="bg-rose-50 text-rose-600 font-bold px-2 py-0.5 rounded text-[10px] border border-rose-100">${req.problem}</span></p>
                         </div>
@@ -1587,6 +1788,17 @@
             </div>`;
         }
 
+        function renderFeedCards() {
+            const feedList = document.getElementById('feed-list');
+            if(!feedList) return;
+            let html = "";
+            window.feedData.forEach((req, index) => {
+                html += generateRequestCard(req, index);
+            });
+            if(html === "") html = `<p class='text-center text-gray-400 py-6 text-xs col-span-full'>${translations[window.currentLang].noNotif}</p>`;
+            feedList.innerHTML = html;
+        }
+
         // --- LOAD GLOBAL REQUESTS ---
         async function loadGlobalRequests() {
             const feedList = document.getElementById('feed-list');
@@ -1600,15 +1812,8 @@
                 });
 
                 requests.sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0));
-
                 window.feedData = requests;
-                let html = "";
-                requests.forEach((req, index) => {
-                    html += generateRequestCard(req, index);
-                });
-                
-                if(html === "") html = "<p class='text-center text-gray-400 py-6 text-xs col-span-full'>No active requests.</p>";
-                if(feedList) feedList.innerHTML = html;
+                renderFeedCards();
             } catch (e) { 
                 console.error("Feed Error:", e);
                 if(feedList) feedList.innerHTML = "<p class='text-center text-red-400 py-6 text-xs col-span-full'>Error loading feed.</p>";
@@ -1629,8 +1834,8 @@
                 });
 
                 requests.sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0));
-
                 window.userRequestData = requests;
+                
                 let html = "";
                 requests.forEach((req, index) => {
                      html += generateRequestCard(req, index, true);
@@ -1672,7 +1877,7 @@
                 const limitedReqs = tempReqs.slice(0, 10);
 
                 if (limitedReqs.length === 0) {
-                    notifList.innerHTML = "<p class='text-center text-gray-400 mt-10 text-xs'>No requests match your blood group.</p>";
+                    notifList.innerHTML = `<p class='text-center text-gray-400 mt-10 text-xs'>${translations[window.currentLang].noNotif}</p>`;
                     return;
                 }
 
@@ -1687,7 +1892,7 @@
                     <div class="bg-white p-3.5 rounded-xl shadow-sm border-l-4 border-rose-500 mb-2 border border-slate-100">
                         <div class="flex justify-between items-start">
                             <div>
-                                <h4 class="font-bold text-gray-800 text-xs md:text-sm">Blood Needed: ${req.blood}</h4>
+                                <h4 class="font-bold text-gray-800 text-xs md:text-sm">${translations[window.currentLang].need}: ${req.blood}</h4>
                                 <p class="text-xs text-gray-600">${req.hospital}, ${area}</p>
                                 <p class="text-[10px] text-gray-400 mt-1">${timeStr}</p>
                             </div>
@@ -1708,22 +1913,71 @@
             localStorage.setItem('lastSeenNotif', Date.now());
         };
 
-        // --- SEARCH DONORS ---
+        // --- SEARCH DONORS (SLIM UI & RENDER) ---
+        function renderSearchResults() {
+            const list = document.getElementById('donors-list');
+            const statsDiv = document.getElementById('search-stats');
+            const t = translations[window.currentLang];
+            const donors = window.currentSearchResults;
+
+            document.getElementById('total-found').innerText = donors.length;
+            document.getElementById('total-available').innerText = donors.filter(u => u.available).length;
+            statsDiv.classList.remove('hidden');
+
+            list.innerHTML = "";
+            if(donors.length === 0) {
+                list.innerHTML = `<div class="text-center mt-10 col-span-full"><i class="fa-regular fa-face-frown text-3xl text-gray-300 mb-2"></i><p class="text-gray-400 text-xs">${window.currentLang === 'bn' ? 'কোনো রক্তদাতা পাওয়া যায়নি।' : 'No donors found.'}</p></div>`;
+                return;
+            }
+
+            donors.forEach((u, index) => {
+                const bloodColorClass = getBloodColorClass(u.blood); 
+                const statusBadge = u.available 
+                    ? `<span class="bg-green-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1"><i class="fa-solid fa-check text-[7px]"></i> ${t.availableText}</span>` 
+                    : `<span class="bg-gray-300 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">${t.unavailableText}</span>`;
+                
+                const area = u.upazila ? `${u.upazila}, ${u.district}` : (u.district || '');
+
+                list.innerHTML += `
+                <div onclick="openDonorModal(${index})" class="bg-white p-3 rounded-xl shadow-sm flex items-center justify-between relative overflow-hidden group hover:shadow-md transition cursor-pointer active:scale-[0.98] border border-slate-100">
+                    <div class="flex items-center gap-3">
+                        <div class="relative">
+                            <div class="w-11 h-11 rounded-full bg-gray-100 border-2 border-white shadow-sm flex items-center justify-center overflow-hidden">
+                                <i class="fa-solid fa-user text-gray-300 text-lg"></i>
+                            </div>
+                            <div class="absolute bottom-0 right-0 w-3 h-3 bg-white rounded-full flex items-center justify-center">
+                                <div class="w-2 h-2 ${u.available ? 'bg-green-500' : 'bg-gray-400'} rounded-full"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-xs md:text-sm leading-tight">${u.name}</h4>
+                            <div class="flex items-center gap-1.5 my-0.5">
+                                <div class="${bloodColorClass} text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm">${u.blood}</div>
+                                <div class="text-[10px] text-gray-500 font-medium truncate max-w-[130px]"><i class="fa-solid fa-location-dot text-rose-400"></i> ${area}</div>
+                            </div>
+                            ${statusBadge}
+                        </div>
+                    </div>
+                    <a href="tel:${u.phone}" onclick="event.stopPropagation()" class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center shadow z-20 relative active:scale-90 transition hover:bg-green-600">
+                       <i class="fa-solid fa-phone text-[11px]"></i>
+                    </a>
+                </div>`;
+            });
+        }
+
         window.searchDonors = async () => {
             const searchText = document.getElementById('search-text').value.toLowerCase().trim();
             const blood = document.getElementById('search-blood').value;
             const district = document.getElementById('search-district').value;
             const list = document.getElementById('donors-list');
-            const statsDiv = document.getElementById('search-stats');
 
-            list.innerHTML = '<div class="text-center mt-14 col-span-full"><div class="loader inline-block border-rose-600"></div><p class="text-gray-500 mt-2 text-xs">Finding Donors...</p></div>';
+            list.innerHTML = '<div class="text-center mt-10 col-span-full"><div class="loader inline-block border-rose-600"></div><p class="text-gray-500 mt-2 text-xs">Finding Donors...</p></div>';
             
             let q = query(collection(db, "users"), where("role", "==", "donor"));
 
             try {
                 const snapshot = await getDocs(q);
                 let donors = [];
-                let availableCount = 0;
 
                 snapshot.forEach(doc => {
                     const u = doc.data();
@@ -1738,53 +1992,10 @@
                         if(!matchName && !matchPhone && !matchLoc && !matchUpazila) return;
                     }
                     donors.push(u);
-                    if(u.available) availableCount++;
                 });
 
                 window.currentSearchResults = donors;
-                document.getElementById('total-found').innerText = donors.length;
-                document.getElementById('total-available').innerText = availableCount;
-                statsDiv.classList.remove('hidden');
-
-                list.innerHTML = "";
-                if(donors.length === 0) {
-                    list.innerHTML = `<div class="text-center mt-10 col-span-full"><i class="fa-regular fa-face-frown text-3xl text-gray-300 mb-2"></i><p class="text-gray-400 text-xs">No donors found.</p></div>`;
-                    return;
-                }
-
-                donors.forEach((u, index) => {
-                    const bloodColorClass = getBloodColorClass(u.blood); 
-                    const statusBadge = u.available 
-                        ? `<span class="bg-green-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1"><i class="fa-solid fa-check text-[7px]"></i> Available</span>` 
-                        : `<span class="bg-gray-300 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">Unavailable</span>`;
-                    
-                    const area = u.upazila ? `${u.upazila}, ${u.district}` : (u.district || '');
-
-                    list.innerHTML += `
-                    <div onclick="openDonorModal(${index})" class="bg-white p-3.5 rounded-2xl shadow-sm flex items-center justify-between relative overflow-hidden group hover:shadow-md transition cursor-pointer active:scale-[0.98] border border-slate-100">
-                        <div class="flex items-center gap-3">
-                            <div class="relative">
-                                <div class="w-12 h-12 rounded-full bg-gray-100 border-2 border-white shadow-sm flex items-center justify-center overflow-hidden">
-                                    <i class="fa-solid fa-user text-gray-300 text-xl"></i>
-                                </div>
-                                <div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-white rounded-full flex items-center justify-center">
-                                    <div class="w-2.5 h-2.5 ${u.available ? 'bg-green-500' : 'bg-gray-400'} rounded-full"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800 text-sm leading-tight">${u.name}</h4>
-                                <div class="flex items-center gap-2 my-1">
-                                    <div class="${bloodColorClass} text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">${u.blood}</div>
-                                    <div class="text-[11px] text-gray-500 font-medium truncate max-w-[120px]"><i class="fa-solid fa-location-dot text-rose-400"></i> ${area}</div>
-                                </div>
-                                ${statusBadge}
-                            </div>
-                        </div>
-                        <a href="tel:${u.phone}" onclick="event.stopPropagation()" class="w-9 h-9 rounded-full bg-green-500 text-white flex items-center justify-center shadow z-20 relative active:scale-90 transition hover:bg-green-600">
-                           <i class="fa-solid fa-phone text-xs"></i>
-                        </a>
-                    </div>`;
-                });
+                renderSearchResults();
             } catch (e) {
                 console.error(e);
                 list.innerHTML = '<p class="text-center text-red-400 mt-10 text-xs col-span-full">Something went wrong.</p>';
@@ -1810,11 +2021,12 @@
             document.getElementById('profile-donations-count').innerText = currentUserData.donationCount || 0;
 
             const statusText = document.getElementById('status-text');
+            const t = translations[window.currentLang];
             if(currentUserData.available) {
-                statusText.innerText = "Active";
+                statusText.innerText = t.activeText;
                 statusText.className = "text-base md:text-lg font-bold text-green-600";
             } else {
-                statusText.innerText = "Inactive";
+                statusText.innerText = t.inactiveText;
                 statusText.className = "text-base md:text-lg font-bold text-gray-400";
             }
             document.getElementById('toggle-availability').checked = currentUserData.available === true;
@@ -1828,10 +2040,12 @@
         function checkEligibility(dateStr) {
             const badge = document.getElementById('eligibility-status-badge');
             const hint = document.getElementById('eligibility-hint');
+            const lang = window.currentLang;
+            
             if(!dateStr) {
                 badge.className = "text-[10px] font-bold px-2 py-0.5 rounded-full bg-green-100 text-green-700";
-                badge.innerText = "Eligible";
-                hint.innerText = "No previous donation recorded. You are eligible to donate!";
+                badge.innerText = translations[lang].eligibleText;
+                hint.innerText = lang === 'bn' ? "পূর্বে রক্তদানের কোনো তথ্য নেই। আপনি রক্ত দিতে প্রস্তুত!" : "No previous donation recorded. You are eligible to donate!";
                 return;
             }
             const last = new Date(dateStr);
@@ -1841,12 +2055,16 @@
             
             if(waitDays > 0) {
                 badge.className = "text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700";
-                badge.innerText = "Waiting Period";
-                hint.innerHTML = `<i class="fa-solid fa-clock text-amber-500 mr-1"></i> Next eligible in <b>${waitDays}</b> day(s).`;
+                badge.innerText = translations[lang].waitingPeriod;
+                hint.innerHTML = lang === 'bn' 
+                    ? `<i class="fa-solid fa-clock text-amber-500 mr-1"></i> পরবর্তী রক্তদান করতে পারবেন <b>${waitDays}</b> দিন পর।`
+                    : `<i class="fa-solid fa-clock text-amber-500 mr-1"></i> Next eligible in <b>${waitDays}</b> day(s).`;
             } else {
                 badge.className = "text-[10px] font-bold px-2 py-0.5 rounded-full bg-green-100 text-green-700";
-                badge.innerText = "Eligible";
-                hint.innerHTML = `<i class="fa-solid fa-circle-check text-green-500 mr-1"></i> You are fully ready to donate blood!`;
+                badge.innerText = translations[lang].eligibleText;
+                hint.innerHTML = lang === 'bn'
+                    ? `<i class="fa-solid fa-circle-check text-green-500 mr-1"></i> আপনি রক্তদানের জন্য সম্পূর্ণ প্রস্তুত!`
+                    : `<i class="fa-solid fa-circle-check text-green-500 mr-1"></i> You are fully ready to donate blood!`;
             }
         }
 
@@ -1869,12 +2087,13 @@
             const toggle = document.getElementById('toggle-availability');
             const statusText = document.getElementById('status-text');
             const isAvailable = toggle.checked;
+            const t = translations[window.currentLang];
             
             if(isAvailable) {
-                statusText.innerText = "Active";
+                statusText.innerText = t.activeText;
                 statusText.className = "text-base md:text-lg font-bold text-green-600";
             } else {
-                statusText.innerText = "Inactive";
+                statusText.innerText = t.inactiveText;
                 statusText.className = "text-base md:text-lg font-bold text-gray-400";
             }
 
